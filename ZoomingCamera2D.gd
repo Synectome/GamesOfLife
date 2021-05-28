@@ -12,8 +12,8 @@ var _zoom_level := 1.0
 
 # We store a reference to the scene's tween node.
 onready var tween: Tween = $Tween
-onready var max_zoom = zoom.x * 3
-onready var min_zoom = (max_zoom/3) * zoom_factor
+onready var max_zoom = zoom.x 
+onready var min_zoom = (max_zoom) * zoom_factor
 
 
 func zoom_in(new_offset):

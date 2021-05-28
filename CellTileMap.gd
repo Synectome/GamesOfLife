@@ -42,6 +42,8 @@ func _input(event):
 	if event.is_action_pressed("Zoom_In"):
 		print("zoom out")
 		cam.zoom_out(Vector2(0,0))
+	if event.is_action_pressed("minmaxScreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 
 func _process(delta):
