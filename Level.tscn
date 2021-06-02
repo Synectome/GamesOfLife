@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://CellTileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ZoomingCamera2D.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,3 +11,5 @@ script = ExtResource( 1 )
 width = 256
 height = 192
 speed = 15
+
+[node name="ZoomingCamera2D" parent="." instance=ExtResource( 3 )]

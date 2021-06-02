@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Cell.png" type="Texture" id=1]
 [ext_resource path="res://CellTileMap.gd" type="Script" id=2]
-[ext_resource path="res://ZoomingCamera2D.gd" type="Script" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Cell.png 0"
@@ -42,9 +41,3 @@ script = ExtResource( 2 )
 width = 512
 height = 384
 speed = 7
-
-[node name="ZoomingCamera2D" type="Camera2D" parent="."]
-current = true
-script = ExtResource( 3 )
-
-[node name="Tween" type="Tween" parent="ZoomingCamera2D"]

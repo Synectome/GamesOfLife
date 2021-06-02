@@ -36,9 +36,12 @@ __meta__ = {
 }
 
 [node name="MenuName" type="Label" parent="."]
-margin_top = 24.0
-margin_right = 1024.0
-margin_bottom = 152.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 12.0
+margin_right = 512.0
+margin_bottom = 140.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.560784, 0.866667, 0.784314, 1 )
 text = "Games Of Life"
@@ -49,10 +52,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HorizontalSizeLabel" type="Label" parent="."]
-margin_top = 150.0
-margin_right = 1024.0
-margin_bottom = 170.0
+[node name="VBoxSliders" type="VBoxContainer" parent="."]
+margin_left = 30.0
+margin_top = 292.0
+margin_right = 930.0
+margin_bottom = 804.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxSliders"]
+margin_right = 900.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HorizontalSizeLabel" type="Label" parent="VBoxSliders/VBoxContainer"]
+margin_right = 900.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 4 )
 text = "Horizontal Size"
 align = 1
@@ -62,24 +80,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HorizontalSize" type="HSlider" parent="HorizontalSizeLabel"]
-margin_left = 312.0
-margin_top = 50.0
-margin_right = 712.0
-margin_bottom = 70.0
-min_value = 512.0
-max_value = 4096.0
-value = 1024.0
+[node name="HorizontalSize" type="HSlider" parent="VBoxSliders/VBoxContainer"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 43.0
+min_value = 64.0
+max_value = 512.0
+step = 2.0
+value = 128.0
 rounded = true
 tick_count = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VerticalSizeLabel" type="Label" parent="."]
-margin_top = 284.0
-margin_right = 1024.0
-margin_bottom = 304.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxSliders"]
+margin_top = 129.0
+margin_right = 900.0
+margin_bottom = 257.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VerticalSizeLabel" type="Label" parent="VBoxSliders/VBoxContainer2"]
+margin_right = 900.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 4 )
 text = "Vertical Size"
 align = 1
@@ -89,24 +114,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VerticalSize" type="HSlider" parent="VerticalSizeLabel"]
-margin_left = 312.0
-margin_top = 50.0
-margin_right = 712.0
-margin_bottom = 70.0
-min_value = 256.0
-max_value = 2048.0
-value = 512.0
+[node name="VerticalSize" type="HSlider" parent="VBoxSliders/VBoxContainer2"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 43.0
+min_value = 64.0
+max_value = 512.0
+step = 2.0
+value = 128.0
 rounded = true
 tick_count = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EvolutionSpeedLabel" type="Label" parent="."]
-margin_top = 418.0
-margin_right = 1024.0
-margin_bottom = 438.0
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxSliders"]
+margin_top = 257.0
+margin_right = 900.0
+margin_bottom = 385.0
+
+[node name="EvolutionSpeedLabel" type="Label" parent="VBoxSliders/VBoxContainer3"]
+margin_right = 900.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 4 )
 text = "Evolution Speed"
 align = 1
@@ -116,12 +145,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EvolutionSpeed" type="HSlider" parent="EvolutionSpeedLabel"]
-margin_left = 312.0
-margin_top = 50.0
-margin_right = 712.0
-margin_bottom = 70.0
-min_value = 1.0
+[node name="EvolutionSpeed" type="HSlider" parent="VBoxSliders/VBoxContainer3"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 43.0
+min_value = 5.0
+step = 5.0
 value = 10.0
 rounded = true
 tick_count = 7
@@ -129,13 +158,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxSliders"]
+margin_top = 385.0
+margin_right = 900.0
+margin_bottom = 513.0
+
+[node name="ScopeLabel" type="Label" parent="VBoxSliders/VBoxContainer4"]
+margin_right = 900.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Scope"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scope" type="HSlider" parent="VBoxSliders/VBoxContainer4"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 43.0
+min_value = 1.0
+max_value = 8.0
+value = 2.0
+rounded = true
+tick_count = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Start" type="Button" parent="."]
-margin_left = 412.0
-margin_top = 600.0
-margin_right = 612.0
-margin_bottom = 630.0
+margin_left = 990.0
+margin_top = 292.0
+margin_right = 1890.0
+margin_bottom = 804.0
 custom_fonts/font = SubResource( 6 )
 text = "Begin"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer/HorizontalSize" to="." method="_on_HorizontalSize_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer2/VerticalSize" to="." method="_on_VerticalSize_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer3/EvolutionSpeed" to="." method="_on_EvolutionSpeed_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer4/Scope" to="." method="_on_Scope_value_changed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

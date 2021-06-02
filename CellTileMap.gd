@@ -3,18 +3,44 @@ extends TileMap
 
 const TILE_SIZE = 16
 
-export(int) var width
-export(int) var height
-export(int) var speed = 5
+#export(int) var width
+#export(int) var height
+#export(int) var speed 
+#export(int) var scope
+var width = 128
+var height = 128
+var speed = 5
+var scope = 1
+var scope_list
 
 var playing = false
 var time = 0
-onready var cam: Camera2D = $ZoomingCamera2D
+onready var cam: Camera2D = $"../ZoomingCamera2D"
 
 
 var temp_field 
 
 func _ready():
+	print("were a boota load deez")
+	print(width)
+	print(height)
+	print(speed)
+	print(scope)
+	
+	load_settings()
+#	var varlist = load_settings()
+#	print("hold up print list now")
+#	print(varlist)
+#	print("--------------------")
+#	print("now thery loadeed")
+	
+	print(width)
+	print(height)
+	print(speed)
+	print(scope)
+	scope_list = scope_to_coord()
+
+	
 	var width_px = width * TILE_SIZE
 	var height_px = height * TILE_SIZE
 	
@@ -61,8 +87,8 @@ func update_field():
 	for x in range(width):
 		for y in range(height):
 			var live_neighbors = 0
-			for x_off in [-2, -1, 0, 1, 2]:
-				for y_off in [-2, -1, 0, 1, 2]:
+			for x_off in scope_list:
+				for y_off in scope_list:
 					if (x_off != y_off) or x_off !=0:
 						if get_cell(x+x_off, y+y_off) == 1:
 							live_neighbors += 1
@@ -73,7 +99,7 @@ func update_field():
 				else:
 					temp_field[x][y] = 0
 			else:
-				if live_neighbors == 5 or live_neighbors == 6:
+				if live_neighbors in [4,5, 6]:
 					temp_field[x][y] = 1
 				else:
 					temp_field[x][y] = 0
@@ -82,3 +108,26 @@ func update_field():
 	for x in range(width):
 		for y in range(height):
 			set_cell(x, y, temp_field[x][y])
+
+
+func scope_to_coord():
+	var li = []
+	for i in range(-(scope),scope+1):
+		li.append(i)
+	return li
+
+
+func load_settings():
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")
+	if err == OK: # If not, something went wrong with the file loading
+		print("config.load() worked")
+		height = config.get_value("Map", "length", 128)
+		width = config.get_value("Map", "width", 128)
+		scope = config.get_value("Algorithm", "scope", 2)
+		speed = config.get_value("Speed", "speed", 5)
+#		return [height, width, scope, speed]
+	else:
+		print("config.load() didn't work")
+		
+
