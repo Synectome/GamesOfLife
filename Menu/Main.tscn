@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxSliders"]
 margin_right = 900.0
-margin_bottom = 128.0
+margin_bottom = 43.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,9 +95,9 @@ __meta__ = {
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxSliders"]
-margin_top = 129.0
+margin_top = 47.0
 margin_right = 900.0
-margin_bottom = 257.0
+margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -129,9 +129,9 @@ __meta__ = {
 }
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxSliders"]
-margin_top = 257.0
+margin_top = 94.0
 margin_right = 900.0
-margin_bottom = 385.0
+margin_bottom = 137.0
 
 [node name="EvolutionSpeedLabel" type="Label" parent="VBoxSliders/VBoxContainer3"]
 margin_right = 900.0
@@ -159,9 +159,9 @@ __meta__ = {
 }
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxSliders"]
-margin_top = 385.0
+margin_top = 141.0
 margin_right = 900.0
-margin_bottom = 513.0
+margin_bottom = 184.0
 
 [node name="ScopeLabel" type="Label" parent="VBoxSliders/VBoxContainer4"]
 margin_right = 900.0
@@ -188,6 +188,162 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxSliders"]
+margin_top = 188.0
+margin_right = 900.0
+margin_bottom = 239.0
+
+[node name="LifeConditions" type="Label" parent="VBoxSliders/VBoxContainer5"]
+margin_right = 900.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Life Conditions (continue living): number of neighboors"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxSliders/VBoxContainer5"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 51.0
+alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 23.0
+margin_right = 97.0
+margin_bottom = 24.0
+
+[node name="SpinBox2" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 101.0
+margin_right = 175.0
+margin_bottom = 24.0
+
+[node name="SpinBox3" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 179.0
+margin_right = 253.0
+margin_bottom = 24.0
+
+[node name="SpinBox4" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 257.0
+margin_right = 331.0
+margin_bottom = 24.0
+
+[node name="SpinBox5" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 335.0
+margin_right = 409.0
+margin_bottom = 24.0
+
+[node name="SpinBox6" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 413.0
+margin_right = 487.0
+margin_bottom = 24.0
+
+[node name="SpinBox7" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 491.0
+margin_right = 565.0
+margin_bottom = 24.0
+
+[node name="SpinBox8" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 569.0
+margin_right = 643.0
+margin_bottom = 24.0
+
+[node name="SpinBox9" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 647.0
+margin_right = 721.0
+margin_bottom = 24.0
+
+[node name="SpinBox10" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 725.0
+margin_right = 799.0
+margin_bottom = 24.0
+
+[node name="SpinBox11" type="SpinBox" parent="VBoxSliders/VBoxContainer5/HBoxContainer"]
+margin_left = 803.0
+margin_right = 877.0
+margin_bottom = 24.0
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxSliders"]
+margin_top = 243.0
+margin_right = 900.0
+margin_bottom = 294.0
+
+[node name="DeathConditions" type="Label" parent="VBoxSliders/VBoxContainer6"]
+margin_right = 900.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Life Conditions (Start living): number of neighboors"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxSliders/VBoxContainer6"]
+margin_top = 27.0
+margin_right = 900.0
+margin_bottom = 51.0
+alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 23.0
+margin_right = 97.0
+margin_bottom = 24.0
+
+[node name="SpinBox2" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 101.0
+margin_right = 175.0
+margin_bottom = 24.0
+
+[node name="SpinBox3" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 179.0
+margin_right = 253.0
+margin_bottom = 24.0
+
+[node name="SpinBox4" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 257.0
+margin_right = 331.0
+margin_bottom = 24.0
+
+[node name="SpinBox5" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 335.0
+margin_right = 409.0
+margin_bottom = 24.0
+
+[node name="SpinBox6" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 413.0
+margin_right = 487.0
+margin_bottom = 24.0
+
+[node name="SpinBox7" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 491.0
+margin_right = 565.0
+margin_bottom = 24.0
+
+[node name="SpinBox8" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 569.0
+margin_right = 643.0
+margin_bottom = 24.0
+
+[node name="SpinBox9" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 647.0
+margin_right = 721.0
+margin_bottom = 24.0
+
+[node name="SpinBox10" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 725.0
+margin_right = 799.0
+margin_bottom = 24.0
+
+[node name="SpinBox11" type="SpinBox" parent="VBoxSliders/VBoxContainer6/HBoxContainer"]
+margin_left = 803.0
+margin_right = 877.0
+margin_bottom = 24.0
+
 [node name="Start" type="Button" parent="."]
 margin_left = 990.0
 margin_top = 292.0
@@ -203,4 +359,26 @@ __meta__ = {
 [connection signal="value_changed" from="VBoxSliders/VBoxContainer2/VerticalSize" to="." method="_on_VerticalSize_value_changed"]
 [connection signal="value_changed" from="VBoxSliders/VBoxContainer3/EvolutionSpeed" to="." method="_on_EvolutionSpeed_value_changed"]
 [connection signal="value_changed" from="VBoxSliders/VBoxContainer4/Scope" to="." method="_on_Scope_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox3" to="." method="_on_SpinBox3_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox4" to="." method="_on_SpinBox4_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox5" to="." method="_on_SpinBox5_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox6" to="." method="_on_SpinBox6_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox7" to="." method="_on_SpinBox7_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox8" to="." method="_on_SpinBox8_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox9" to="." method="_on_SpinBox9_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox10" to="." method="_on_SpinBox10_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer5/HBoxContainer/SpinBox11" to="." method="_on_SpinBox11_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox" to="." method="_on_SpinBoxDead_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox2" to="." method="_on_SpinBoxDead2_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox3" to="." method="_on_SpinBoxDead3_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox4" to="." method="_on_SpinBoxDead4_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox5" to="." method="_on_SpinBoxDead5_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox6" to="." method="_on_SpinBoxDead6_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox7" to="." method="_on_SpinBoxDead7_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox8" to="." method="_on_SpinBoxDead8_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox9" to="." method="_on_SpinBoxDead9_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox10" to="." method="_on_SpinBoxDead10_value_changed"]
+[connection signal="value_changed" from="VBoxSliders/VBoxContainer6/HBoxContainer/SpinBox11" to="." method="_on_SpinBoDeadx11_value_changed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

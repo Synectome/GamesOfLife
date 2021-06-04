@@ -20,23 +20,27 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GameOfLife"
+config/name="GamesOfLife"
+config/description="Based on the imfamous \"Conway's Game of Life\" made by John Horton Conway in 1970. The original game of life had a cell scope of 1, and made a turing complete set of cellular atomata. This game allows you to change the algorithm and create different versions of the game of life. Formally, it allows users to explore the isotropic rule space that exists on the grid of squres."
 run/main_scene="res://Menu/Main.tscn"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=2048
+window/size/height=1024
+window/size/resizable=false
 window/size/fullscreen=true
-window/size/test_width=1920
-window/size/test_height=1080
+window/size/test_width=2048
+window/size/test_height=1024
+window/dpi/allow_hidpi=true
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [global]
 
 input=false
-"full screen"=false
+"full screen"=true
 
 [importer_defaults]
 
@@ -133,10 +137,23 @@ threads/thread_model=2
 vram_compression/import_bptc=true
 vram_compression/import_etc=true
 vram_compression/import_pvrtc=true
+quality/directional_shadow/size=256
+quality/directional_shadow/size.mobile=256
 quality/shadow_atlas/size=256
 quality/shadow_atlas/size.mobile=256
 quality/shadow_atlas/cubemap_size=64
 quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/reflections/irradiance_max_size=32
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
+quality/depth_prepass/enable=false
+2d/options/ninepatch_mode=0
+limits/buffers/canvas_polygon_buffer_size_kb=4096
+limits/buffers/canvas_polygon_index_buffer_size_kb=4096
+limits/buffers/immediate_buffer_size_kb=4096
 environment/default_environment="res://default_env.tres"
 
 [world]

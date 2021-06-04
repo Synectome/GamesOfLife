@@ -12,6 +12,7 @@ var height = 128
 var speed = 5
 var scope = 1
 var scope_list
+var neighboor_life_array: Array
 
 var playing = false
 var time = 0
@@ -94,12 +95,12 @@ func update_field():
 							live_neighbors += 1
 							
 			if get_cell(x, y) == 1:
-				if live_neighbors in [4,5,6]:
+				if live_neighbors in neighboor_life_array:
 					temp_field[x][y] = 1
 				else:
 					temp_field[x][y] = 0
 			else:
-				if live_neighbors in [4,5, 6]:
+				if live_neighbors in neighboor_life_array:
 					temp_field[x][y] = 1
 				else:
 					temp_field[x][y] = 0
@@ -126,8 +127,15 @@ func load_settings():
 		width = config.get_value("Map", "width", 128)
 		scope = config.get_value("Algorithm", "scope", 2)
 		speed = config.get_value("Speed", "speed", 5)
+		neighboor_life_array = config.get_value("Algorithm", "life", [3,4])
+		print("Life array")
+		print(neighboor_life_array)
 #		return [height, width, scope, speed]
 	else:
 		print("config.load() didn't work")
-		
+
+
+#func live_cell_input(value):
+#	value = "3,5,7"
+	
 

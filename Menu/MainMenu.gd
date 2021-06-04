@@ -4,6 +4,19 @@ export (int)var horizontal_size setget _on_HorizontalSize_value_changed
 export (int)var vertical_size setget _on_VerticalSize_value_changed
 export (int)var evolution_speed setget _on_EvolutionSpeed_value_changed
 export (int)var scope setget _on_Scope_value_changed
+export(Array, int) var neighboor_life_array = []
+
+var l_box_1 : int
+var l_box_2 : int
+var l_box_3 : int
+var l_box_4 : int
+var l_box_5 : int
+var l_box_6 : int
+var l_box_7 : int
+var l_box_8 : int
+var l_box_9 : int
+var l_box_10 : int
+var l_box_11 : int
 
 onready var horizontal_label: Label = $VBoxSliders/VBoxContainer/HorizontalSizeLabel
 onready var vertical_label: Label = $VBoxSliders/VBoxContainer2/VerticalSizeLabel
@@ -40,6 +53,7 @@ func _on_Start_pressed():
 func save_menu_selections(length: int, width: int, speed: int, scope: int):
 	# Sections are:
 		# Map, Algorithm, Speed
+	make_neighboor_array()
 	var config = ConfigFile.new()
 	print("We are bou'ta save deez")
 	print(length)
@@ -50,8 +64,122 @@ func save_menu_selections(length: int, width: int, speed: int, scope: int):
 	config.set_value("Map", "width", width)
 	config.set_value("Algorithm", "scope", scope)
 	config.set_value("Speed", "speed", speed)
+	config.set_value("Algorithm", "life", neighboor_life_array)
 
 	config.save("user://settings.cfg")
 
 
 
+######################################
+#### - input for neighbor/life - #####
+######################################
+func make_neighboor_array():
+	if l_box_1:
+		neighboor_life_array.append(l_box_1)
+	if l_box_2:
+		neighboor_life_array.append(l_box_2)
+	if l_box_3:
+		neighboor_life_array.append(l_box_3)
+	if l_box_4:
+		neighboor_life_array.append(l_box_4)
+	if l_box_5:
+		neighboor_life_array.append(l_box_5)
+	if l_box_6:
+		neighboor_life_array.append(l_box_6)
+	if l_box_7:
+		neighboor_life_array.append(l_box_7)
+	if l_box_8:
+		neighboor_life_array.append(l_box_8)
+	if l_box_9:
+		neighboor_life_array.append(l_box_9)
+	if l_box_10:
+		neighboor_life_array.append(l_box_10)
+	if l_box_11:
+		neighboor_life_array.append(l_box_11)
+
+func _on_SpinBox_value_changed(value):
+	l_box_1 = value
+
+
+func _on_SpinBox2_value_changed(value):
+	l_box_2 = value
+
+
+func _on_SpinBox3_value_changed(value):
+	l_box_3 = value
+
+
+func _on_SpinBox4_value_changed(value):
+	l_box_4 = value
+
+
+func _on_SpinBox5_value_changed(value):
+	l_box_5 = value
+
+
+func _on_SpinBox6_value_changed(value):
+	l_box_6 = value
+
+
+func _on_SpinBox7_value_changed(value):
+	l_box_7 = value
+
+
+func _on_SpinBox8_value_changed(value):
+	l_box_8 = value
+
+
+func _on_SpinBox9_value_changed(value):
+	l_box_9 = value
+
+
+func _on_SpinBox10_value_changed(value):
+	l_box_10 = value
+
+
+func _on_SpinBox11_value_changed(value):
+	l_box_11 = value
+
+###### Start of the death list #####
+func _on_SpinBoxDead_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead2_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead3_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead4_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead5_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead6_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead7_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead8_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead9_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoxDead10_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_SpinBoDeadx11_value_changed(value):
+	pass # Replace with function body.
