@@ -1,0 +1,6 @@
+Have preset options from the menu:
+	Alive if number of neighboors is prime.
+	Alive if number of neighboors is in a special set (pulled from a repo)
+
+Bound the number of neighboors in a set to look through by what is possible
+Given the number of neighboors accesible in the scope.

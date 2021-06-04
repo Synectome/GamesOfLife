@@ -30,3 +30,4 @@ func _input(event):
 	if event.is_action_pressed("camera_right"):
 		camera.position = camera.position + Vector2(64, 0)
 
+

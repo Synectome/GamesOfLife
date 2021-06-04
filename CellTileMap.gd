@@ -3,16 +3,13 @@ extends TileMap
 
 const TILE_SIZE = 16
 
-#export(int) var width
-#export(int) var height
-#export(int) var speed 
-#export(int) var scope
 var width = 128
 var height = 128
 var speed = 5
 var scope = 1
 var scope_list
 var neighboor_life_array: Array
+var neighboor_death_array: Array
 
 var playing = false
 var time = 0
@@ -71,6 +68,10 @@ func _input(event):
 		cam.zoom_out(Vector2(0,0))
 	if event.is_action_pressed("minmaxScreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
+	if event.is_action_pressed("menu"):
+		get_tree().change_scene("res://Menu/Main.tscn")
+	if event.is_action_pressed("clear"):
+		clear_field()
 
 
 func _process(delta):
@@ -100,7 +101,7 @@ func update_field():
 				else:
 					temp_field[x][y] = 0
 			else:
-				if live_neighbors in neighboor_life_array:
+				if live_neighbors in neighboor_death_array:
 					temp_field[x][y] = 1
 				else:
 					temp_field[x][y] = 0
@@ -128,6 +129,7 @@ func load_settings():
 		scope = config.get_value("Algorithm", "scope", 2)
 		speed = config.get_value("Speed", "speed", 5)
 		neighboor_life_array = config.get_value("Algorithm", "life", [3,4])
+		neighboor_death_array = config.get_value("Algorithm", "death", [3,4])
 		print("Life array")
 		print(neighboor_life_array)
 #		return [height, width, scope, speed]
@@ -135,7 +137,7 @@ func load_settings():
 		print("config.load() didn't work")
 
 
-#func live_cell_input(value):
-#	value = "3,5,7"
-	
-
+func clear_field():
+	for x in range(width):
+		for y in range(height):
+			set_cell(x, y, 0)

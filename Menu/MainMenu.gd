@@ -4,7 +4,9 @@ export (int)var horizontal_size setget _on_HorizontalSize_value_changed
 export (int)var vertical_size setget _on_VerticalSize_value_changed
 export (int)var evolution_speed setget _on_EvolutionSpeed_value_changed
 export (int)var scope setget _on_Scope_value_changed
+
 export(Array, int) var neighboor_life_array = []
+export(Array, int) var neighboor_death_array = []
 
 var l_box_1 : int
 var l_box_2 : int
@@ -17,6 +19,17 @@ var l_box_8 : int
 var l_box_9 : int
 var l_box_10 : int
 var l_box_11 : int
+var d_box_1 : int
+var d_box_2 : int
+var d_box_3 : int
+var d_box_4 : int
+var d_box_5 : int
+var d_box_6 : int
+var d_box_7 : int
+var d_box_8 : int
+var d_box_9 : int
+var d_box_10 : int
+var d_box_11 : int
 
 onready var horizontal_label: Label = $VBoxSliders/VBoxContainer/HorizontalSizeLabel
 onready var vertical_label: Label = $VBoxSliders/VBoxContainer2/VerticalSizeLabel
@@ -65,10 +78,13 @@ func save_menu_selections(length: int, width: int, speed: int, scope: int):
 	config.set_value("Algorithm", "scope", scope)
 	config.set_value("Speed", "speed", speed)
 	config.set_value("Algorithm", "life", neighboor_life_array)
+	config.set_value("Algorithm", "death", neighboor_death_array)
 
 	config.save("user://settings.cfg")
 
-
+func _input(event):
+	if event.is_action_pressed("minmaxScreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 ######################################
 #### - input for neighbor/life - #####
@@ -96,6 +112,28 @@ func make_neighboor_array():
 		neighboor_life_array.append(l_box_10)
 	if l_box_11:
 		neighboor_life_array.append(l_box_11)
+	if d_box_1:
+		neighboor_death_array.append(d_box_1)
+	if d_box_2:
+		neighboor_death_array.append(d_box_2)
+	if d_box_3:
+		neighboor_death_array.append(d_box_3)
+	if d_box_4:
+		neighboor_death_array.append(d_box_4)
+	if d_box_5:
+		neighboor_death_array.append(d_box_5)
+	if d_box_6:
+		neighboor_death_array.append(d_box_6)
+	if d_box_7:
+		neighboor_death_array.append(d_box_7)
+	if d_box_8:
+		neighboor_death_array.append(d_box_8)
+	if d_box_9:
+		neighboor_death_array.append(d_box_9)
+	if d_box_10:
+		neighboor_death_array.append(d_box_10)
+	if d_box_11:
+		neighboor_death_array.append(d_box_11)
 
 func _on_SpinBox_value_changed(value):
 	l_box_1 = value
@@ -142,44 +180,44 @@ func _on_SpinBox11_value_changed(value):
 
 ###### Start of the death list #####
 func _on_SpinBoxDead_value_changed(value):
-	pass # Replace with function body.
+	d_box_1 = value
 
 
 func _on_SpinBoxDead2_value_changed(value):
-	pass # Replace with function body.
+	d_box_2 = value
 
 
 func _on_SpinBoxDead3_value_changed(value):
-	pass # Replace with function body.
+	d_box_3 = value
 
 
 func _on_SpinBoxDead4_value_changed(value):
-	pass # Replace with function body.
+	d_box_4 = value
 
 
 func _on_SpinBoxDead5_value_changed(value):
-	pass # Replace with function body.
+	d_box_5 = value
 
 
 func _on_SpinBoxDead6_value_changed(value):
-	pass # Replace with function body.
+	d_box_6 = value
 
 
 func _on_SpinBoxDead7_value_changed(value):
-	pass # Replace with function body.
+	d_box_7 = value
 
 
 func _on_SpinBoxDead8_value_changed(value):
-	pass # Replace with function body.
+	d_box_8 = value
 
 
 func _on_SpinBoxDead9_value_changed(value):
-	pass # Replace with function body.
+	d_box_9 = value
 
 
 func _on_SpinBoxDead10_value_changed(value):
-	pass # Replace with function body.
+	d_box_10 = value
 
 
 func _on_SpinBoDeadx11_value_changed(value):
-	pass # Replace with function body.
+	d_box_11 = value
