@@ -38,6 +38,3 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 script = ExtResource( 2 )
-width = 512
-height = 384
-speed = 7
