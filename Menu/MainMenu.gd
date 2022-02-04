@@ -35,6 +35,7 @@ onready var horizontal_label: Label = $VBoxSliders/VBoxContainer/HorizontalSizeL
 onready var vertical_label: Label = $VBoxSliders/VBoxContainer2/VerticalSizeLabel
 onready var speed_label: Label = $VBoxSliders/VBoxContainer/EvolutionSpeedLabel
 onready var scope_label: Label = $VBoxSliders/VBoxContainer/ScopeLabel
+onready var video_player: VideoPlayer = $VideoPlayer
 
 
 func _on_HorizontalSize_value_changed(value):
@@ -44,8 +45,8 @@ func _on_HorizontalSize_value_changed(value):
 
 func _on_VerticalSize_value_changed(value):
 	vertical_size = int(value)
-	vertical_label.text = "this"
-	vertical_label.text = "Vertical Size : " + str(vertical_size)
+	#vertical_label.text = "this"
+	#vertical_label.text = "Vertical Size : " + str(vertical_size)
 
 
 func _on_EvolutionSpeed_value_changed(value):
@@ -221,3 +222,7 @@ func _on_SpinBoxDead10_value_changed(value):
 
 func _on_SpinBoDeadx11_value_changed(value):
 	d_box_11 = value
+
+
+func _on_VideoPlayer_finished():
+	video_player.play()
